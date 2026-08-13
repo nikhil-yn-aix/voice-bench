@@ -1,0 +1,39 @@
+{
+  "seed": 20260813,
+  "profiles": {
+    "deployment": {"threads": 0, "warmups": 1, "repetitions": 3},
+    "controlled": {"threads": 4, "warmups": 1, "repetitions": 3}
+  },
+  "asr_modes": ["native", "silero_vad", "continuous_chunked"],
+  "stream_chunk_seconds": 0.1,
+  "pseudo_stream_seconds": 2.0,
+  "vad": {
+    "threshold": 0.5,
+    "min_silence_duration_ms": 500,
+    "min_speech_duration_ms": 250,
+    "max_speech_duration_s": 30,
+    "speech_pad_ms": 100
+  },
+  "sampling_interval_ms": 20,
+  "suite_scopes": {
+    "asr": {
+      "full": ["clean", "fast", "technical", "speaking_style", "noisy", "long"],
+      "vad": ["clean", "noisy"],
+      "stream": ["clean"],
+      "controlled": ["clean"],
+      "cold": ["clean"]
+    },
+    "tts": {
+      "full": ["short", "medium", "long", "technical", "expressive", "prosody"],
+      "controlled": ["short"],
+      "cold": ["short"]
+    }
+  },
+  "memory_budget_mb": 400,
+  "ranking_profiles": {
+    "balanced": {"quality": 0.35, "latency": 0.2, "memory": 0.15, "cpu": 0.1, "stability": 0.1, "size": 0.1},
+    "latency_first": {"quality": 0.25, "latency": 0.4, "memory": 0.1, "cpu": 0.1, "stability": 0.1, "size": 0.05},
+    "memory_first": {"quality": 0.25, "latency": 0.1, "memory": 0.4, "cpu": 0.1, "stability": 0.05, "size": 0.1},
+    "quality_first": {"quality": 0.55, "latency": 0.15, "memory": 0.1, "cpu": 0.05, "stability": 0.1, "size": 0.05}
+  }
+}

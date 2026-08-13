@@ -1,0 +1,8 @@
+[
+  {"id": "short", "category": "conversation", "text": "Sure, I can help with that. What would you like to do next?"},
+  {"id": "medium", "category": "conversation", "text": "Your appointment is confirmed for Thursday afternoon. I will send a reminder thirty minutes before it begins, and you can reschedule at any time."},
+  {"id": "long", "category": "long_form", "text": "Local speech systems are useful when privacy, predictable cost, and low network latency matter. A practical deployment must remain responsive after hours of use, recover cleanly from malformed input, and fit beside the rest of the application. This benchmark measures those constraints directly instead of relying only on model size or vendor speed claims."},
+  {"id": "technical", "category": "normalization", "text": "At 9:45 a.m., send 3.7 gigabytes to api.example.com using HTTPS, verify SHA-256, and cap CPU usage at 40%. The invoice total is $1,024.50."},
+  {"id": "expressive", "category": "emotion", "text": "I cannot believe it worked! After all those careful attempts, we finally made it. What a wonderful surprise."},
+  {"id": "prosody", "category": "punctuation", "text": "Wait... did you mean the old server, the new server, or both? No, please don't restart anything yet; listen first."}
+]

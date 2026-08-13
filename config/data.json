@@ -1,0 +1,66 @@
+{
+  "tts_reference_source": "speaking_style",
+  "scenarios": [
+    {
+      "id": "clean",
+      "category": "clean_read",
+      "source": "openslr/librispeech_asr",
+      "revision": "71cacbf",
+      "config": "clean",
+      "split": "test",
+      "transcript_field": "text",
+      "selector": {"type": "first"},
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "fast",
+      "category": "fast_speech",
+      "source": "openslr/librispeech_asr",
+      "revision": "71cacbf",
+      "config": "clean",
+      "split": "test",
+      "transcript_field": "text",
+      "selector": {"type": "max_speech_rate", "scan": 80, "min_duration_s": 4, "max_duration_s": 18},
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "technical",
+      "category": "technical_terms",
+      "source": "google/fleurs",
+      "revision": "70bb2e8",
+      "config": "en_us",
+      "split": "test",
+      "transcript_field": "transcription",
+      "selector": {"type": "contains_any", "values": ["technology", "system", "company", "energy", "research"], "scan": 200},
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "speaking_style",
+      "category": "speaker_variation",
+      "source": "google/fleurs",
+      "revision": "70bb2e8",
+      "config": "en_us",
+      "split": "test",
+      "transcript_field": "transcription",
+      "selector": {"type": "index", "value": 1, "scan": 2},
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "noisy",
+      "category": "degraded",
+      "derived_from": "clean",
+      "transform": {"type": "brown_noise", "snr_db": 8.0, "seed": 20260813}
+    },
+    {
+      "id": "long",
+      "category": "long_form",
+      "source": "openslr/librispeech_asr",
+      "revision": "71cacbf",
+      "config": "clean",
+      "split": "test",
+      "transcript_field": "text",
+      "selector": {"type": "concatenate", "target_duration_s": 120, "silence_s": 0.2},
+      "license": "CC-BY-4.0"
+    }
+  ]
+}
